@@ -28,7 +28,7 @@ function App() {
           </Routes>
           <footer>
             <p>Created by Huma Rukshan</p>
-            <a href="https://github.com/HumaRukshan25/React-Ecommerce-Site">
+            <a href="https://github.com/HumaRukshan25/Ecommerce-website">
               <img className="github-logo" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub logo" />
             </a>
             <Nav className="ml-auto">

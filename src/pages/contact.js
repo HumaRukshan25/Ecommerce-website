@@ -50,6 +50,16 @@ const Button = styled.button`
 
 export const Contact = () => {
   const [isMessageSent, setIsMessageSent] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "", // Add phone field
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -65,11 +75,40 @@ export const Contact = () => {
       {!isMessageSent ? (
         <Form onSubmit={handleSubmit}>
           <label htmlFor="name">Name:</label>
-          <Input type="text" id="name" name="name" required />
+          <Input
+            type="text"
+            id="name"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
           <label htmlFor="email">Email:</label>
-          <Input type="email" id="email" name="email" required />
+          <Input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+          <label htmlFor="phone">Phone:</label>
+          <Input
+            type="tel"
+            id="phone"
+            name="phone"
+            value={formData.phone}
+            onChange={handleChange}
+            required
+          />
           <label htmlFor="message">Message:</label>
-          <TextArea id="message" name="message" required></TextArea>
+          <TextArea
+            id="message"
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            required
+          ></TextArea>
           <Button type="submit">Send</Button>
         </Form>
       ) : (
